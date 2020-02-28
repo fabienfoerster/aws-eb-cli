@@ -1,17 +1,7 @@
-FROM alpine
+FROM python:3.6-slim
 
-RUN apk --no-cache --update add \
-        bash \
-        less \
-        groff \
-        jq \
-        git \
-        curl \
-        python \
-        py-pip
+RUN apt-get update && apt-get upgrade && apt-get install -y --no-install-recommends zip
 
-RUN pip install --upgrade pip \
-        awsebcli \
-        awscli
+RUN pip3 install --upgrade pip awsebcli
         
 CMD ["/bin/bash"]
