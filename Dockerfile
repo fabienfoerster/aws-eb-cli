@@ -13,6 +13,5 @@ RUN apk --no-cache --update add \
 RUN pip install --upgrade pip \
         awsebcli \
         awscli
-
-# Expose credentials volume
+        
 CMD ["/bin/bash"]
